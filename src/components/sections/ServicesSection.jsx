@@ -74,56 +74,74 @@ export default function ServicesSection() {
               <div
                 key={service.id}
                 className="
+                  sticky
+                  top-[40px]
+                  md:top-[120px]
                   mb-[25px]
                   md:mb-[35px]
                   group
                   relative
-                  overflow-visible
-                  bg-white
-                  grid
-                  grid-cols-1
-                  lg:grid-cols-[300px_1fr_90px]
-                  gap-8
-                  lg:gap-12
-                  items-center
+                  overflow-hidden
+                  min-h-[156px]
+                  bg-[#F5F5F5]
+                  flex
+                  flex-col
+                  lg:grid
+                  lg:grid-cols-[360px_1fr_90px]
+                  items-start
+                  lg:items-center
                   p-6
                   sm:p-8
                   md:px-[48px]
                   md:py-8
                   transition-all
                   duration-500
-                  hover:shadow-[0_15px_40px_rgba(0,0,0,0.08)]
-                  border
-                  border-[#E2E8F0]
+                  hover:-translate-y-[3px]
+                  hover:shadow-[0_15px_40px_rgba(0,0,0,0.12)]
                   cursor-pointer
+                  gap-6
+                  lg:gap-0
                 "
                 style={{
                   zIndex: service.id,
                 }}
               >
-                {/* Left Side: Blob Image */}
-                <div className="hidden lg:flex flex-col items-center justify-center relative w-full max-w-[240px]">
-                  {/* Dark Shape Background */}
-                  <div
-                    className="absolute w-full aspect-square bg-[#0F1B2D] rounded-full"
-                    style={{
-                      borderRadius: "30% 70% 70% 30% / 30% 34% 66% 70%",
-                      transform: "translate(12px, 12px)",
-                    }}
-                  />
-                  
-                  {/* Main Image with Blob Shape */}
-                  <div
-                    className="absolute inset-0 bg-cover bg-center z-10 group-hover:scale-105 transition-transform duration-500"
-                    style={{
-                      backgroundImage: `url(${service.image})`,
-                      borderRadius: "30% 70% 70% 30% / 50% 34% 66% 70%",
-                    }}
-                  />
-                </div>
+                {/* Background Image */}
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    opacity-0
+                    scale-110
+                    transition-all
+                    duration-700
+                    group-hover:opacity-100
+                    group-hover:scale-100
+                    pointer-events-none
+                  "
+                  style={{
+                    backgroundImage: `url(${service.image})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                />
+
+                {/* Dark Overlay */}
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    bg-[#0F1B2D]/90
+                    opacity-0
+                    transition-all
+                    duration-700
+                    group-hover:opacity-100
+                    pointer-events-none
+                  "
+                />
 
                 {/* Left Side: Icon & Title */}
-                <div className="relative z-10 flex lg:flex-col lg:items-start lg:gap-[16px] items-center gap-[20px] md:gap-[28px] w-full lg:w-auto">
+                <div className="relative z-10 flex items-center gap-[20px] md:gap-[28px] w-full lg:w-auto">
                   <Icon
                     className="
                       w-[48px]
@@ -134,7 +152,7 @@ export default function ServicesSection() {
                       text-[#0F1B2D]
                       transition-all
                       duration-500
-                      group-hover:text-[#0F1B2D]
+                      group-hover:text-white
                       group-hover:scale-110
                       shrink-0
                     "
@@ -149,31 +167,15 @@ export default function ServicesSection() {
                       text-[#0F1B2D]
                       transition-colors
                       duration-500
-                      group-hover:text-[#0F1B2D]
+                      group-hover:text-white
                     "
                   >
                     {service.title}
                   </h3>
-
-                  {/* Description - Mobile only */}
-                  <p
-                    className="
-                      lg:hidden
-                      text-[15px]
-                      md:text-[16px]
-                      leading-[28px]
-                      md:leading-[32px]
-                      text-[#5E6472]
-                      transition-colors
-                      duration-500
-                    "
-                  >
-                    {service.description}
-                  </p>
                 </div>
 
-                {/* Middle: Description - Desktop only */}
-                <div className="hidden lg:block relative z-10 lg:pr-[20px] w-full text-left">
+                {/* Description */}
+                <div className="relative z-10 lg:pr-[50px] w-full text-left">
                   <p
                     className="
                       text-[15px]
@@ -183,6 +185,7 @@ export default function ServicesSection() {
                       text-[#5E6472]
                       transition-colors
                       duration-500
+                      group-hover:text-white/80
                     "
                   >
                     {service.description}
@@ -204,7 +207,6 @@ export default function ServicesSection() {
                       transition-all
                       duration-500
                       group-hover:bg-white
-                      hover:shadow-lg
                     "
                   >
                     <ArrowRight
