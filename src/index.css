@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+
+  --color-plasman-purple: #551fa8;    /* البنفسجي الأساسي */
+  --color-plasman-dark: #140f50;      /* الكحلي الداكن */
+  --color-plasman-light: #eae3f0;     /* الخلفية الفاتحة */
+  --color-plasman-deep: #3e278a;      /* البنفسجي الداكن للمؤثرات */
+  --color-plasman-accent: #5920a5;    /* درجة تركيز بنفسجية أخرى */
+  --color-plasman-gray: #F2F2F2;    /* درجة السكني   */
+}
