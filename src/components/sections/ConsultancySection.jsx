@@ -1,83 +1,94 @@
-import { Award, Headphones } from 'lucide-react';
-import consultancyImage from '../../assets/images/close-up.jpg'; 
+import { Award, Headphones } from "lucide-react";
+import consultancyImage from "../../assets/images/close-up.jpg";
 
 export default function ConsultancySection() {
   return (
-    <section className="bg-white py-[60px] md:py-[120px] px-6 md:px-12 lg:px-24 font-sans select-none antialiased">
-      <div className="max-w-[1320px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-        
-        {/* ==================== LEFT SIDE: 100% PERFECT MATCH SHAPED IMAGE ==================== */}
-        <div className="lg:col-span-6 flex justify-center lg:justify-start w-full">
-          <div className="relative w-full max-w-[490px] aspect-[1/1] sm:aspect-square">
-            
-            {/* 1. Behind Dark Shape Layer (الخلفية الداكنة الخلفية المزيحة) */}
-            <div 
-              className="absolute inset-0 bg-[#0F1B2D] translate-x-4 translate-y-4 md:translate-x-6 md:translate-y-6 z-0"
-              style={{ 
-                // الانحناء الهندسي الأصلي الدقيق من القالب (Blob Shape Layout)
-                borderRadius: "30% 70% 70% 30% / 30% 34% 66% 70%" 
-              }}
-            />
+    <section className="bg-white py-20 px-6 lg:px-24 overflow-visible">
+      <div className="max-w-[1320px] mx-auto grid lg:grid-cols-2 gap-20 items-center">
 
-            {/* 2. Main Foreground Image Layer (الصورة الأمامية المتطابقة) */}
-            <div 
-              className="absolute inset-0 bg-cover bg-center z-10"
-              style={{ 
-                backgroundImage: `url(${consultancyImage})`,
-                // نفس الانحناء الهندسي تماماً ليتطابق التموج البصري عند التداخل
-                borderRadius: "30% 10% 70% 30% / 50% 34% 66% 70%" 
-              }}
-            />
+      <div className="relative w-full max-w-[540px]">
 
-          </div>
-        </div>
+  {/* Shadow */}
+  <svg
+      viewBox="-20 -20 560 500"
+  className="absolute top-4 left-4 w-full h-full"
+  >
+    <path fillRule="evenodd" clipRule="evenodd" d="M245.525 0.0448032C293.821 -1.95867 353.202 63.741 389.029 94.5007C424.855 125.261 467.029 142.501 484.529 181.72C503.747 224.791 457.529 292.501 435.455 344.001C412.834 381.21 411.985 394 377.453 423.365C345.512 443.291 285.289 425.67 245.525 428.511C205.762 431.352 191.269 435.737 145.816 428.511C113.443 423.365 68.1206 399.147 37.9057 351.954C7.69082 304.761 -17.023 231.684 15.0287 181.72C32.2944 154.805 48.4434 161.925 113.443 87.518C158.334 36.13 197.11 2.05324 245.525 0.0448032Z" fill="#1E2A36" fillOpacity="0.99"/>
+  </svg>
 
-        {/* ==================== RIGHT SIDE: CONTENTS ==================== */}
-        <div className="lg:col-span-6 space-y-8 text-left">
-          
-          <div className="space-y-4">
-            <span className="inline-block border border-gray-200 text-plasman-purple text-[13px] md:text-[14px] font-bold tracking-[0.06em] px-[22px] py-[10px] uppercase rounded-none bg-white">
-              Business Consultancy
-            </span>
-            
-            <h2 className="text-[32px] sm:text-[38px] md:text-[46px] font-extrabold text-plasman-dark tracking-tight uppercase leading-[1.15]">
-              Why We're The <br />
-              <span className="text-plasman-dark">Perfect Fit For You</span>
-            </h2>
-          </div>
+  {/* Main Image */}
+  <svg
+    viewBox="-20 -20 560 500"
+  className="relative z-10 w-full h-auto"
+  >
+    <defs>
+      <clipPath id="consultancy-shape">
+    <path fillRule="evenodd" clipRule="evenodd" d="M245.525 0.0448032C293.821 -1.95867 353.202 63.741 389.029 94.5007C424.855 125.261 467.029 142.501 484.529 181.72C503.747 224.791 457.529 292.501 435.455 344.001C412.834 381.21 411.985 394 377.453 423.365C345.512 443.291 285.289 425.67 245.525 428.511C205.762 431.352 191.269 435.737 145.816 428.511C113.443 423.365 68.1206 399.147 37.9057 351.954C7.69082 304.761 -17.023 231.684 15.0287 181.72C32.2944 154.805 48.4434 161.925 113.443 87.518C158.334 36.13 197.11 2.05324 245.525 0.0448032Z" fill="#C4C4C4" fillOpacity="0.99"/>
 
-          <div className="space-y-8 pt-4">
-            
-            <div className="flex items-start gap-6 group">
-              <div className="w-[64px] h-[64px] rounded-full border border-gray-200 flex items-center justify-center shrink-0 bg-white group-hover:bg-plasman-purple group-hover:border-plasman-purple transition-all duration-400">
-                <Award className="w-[28px] h-[28px] stroke-[1.3] text-plasman-dark group-hover:text-white transition-colors duration-400" />
+      </clipPath>
+    </defs>
+
+    <image
+  href={consultancyImage}
+  x="-20"
+  y="-20"
+  width="560"
+  height="500"
+  preserveAspectRatio="xMidYMid slice"
+  clipPath="url(#consultancy-shape)"
+/>
+  </svg>
+
+</div>
+
+        {/* CONTENT */}
+        <div>
+          <span className="inline-block border border-gray-200 px-6 py-3 uppercase text-[13px] font-semibold tracking-[2px] text-violet-600">
+            Business Consultancy
+          </span>
+
+          <h2 className="mt-6 text-[42px] leading-[1.1] font-extrabold uppercase text-slate-900">
+            Why We're The <br />
+            Perfect Fit For You
+          </h2>
+
+          <div className="mt-12 space-y-10">
+
+            <div className="flex gap-5">
+              <div className="w-16 h-16 rounded-full border flex items-center justify-center">
+                <Award size={28} />
               </div>
-              <div className="space-y-2">
-                <h3 className="text-[20px] font-bold text-plasman-dark tracking-tight">
+
+              <div>
+                <h3 className="text-[22px] font-bold text-slate-900">
                   Best Business Consulting
                 </h3>
-                <p className="text-[#5E6472] text-[16px] leading-[28px] font-normal max-w-lg">
-                  We specialize in helping businesses unlock their full potential through expert guidance,
+
+                <p className="mt-2 text-gray-500 leading-8">
+                  We specialize in helping businesses unlock their full
+                  potential through expert guidance and consulting solutions.
                 </p>
               </div>
             </div>
 
-            <div className="flex items-start gap-6 group">
-              <div className="w-[64px] h-[64px] rounded-full border border-gray-200 flex items-center justify-center shrink-0 bg-white group-hover:bg-plasman-purple group-hover:border-plasman-purple transition-all duration-400">
-                <Headphones className="w-[28px] h-[28px] stroke-[1.3] text-plasman-dark group-hover:text-white transition-colors duration-400" />
+            <div className="flex gap-5">
+              <div className="w-16 h-16 rounded-full border flex items-center justify-center">
+                <Headphones size={28} />
               </div>
-              <div className="space-y-2">
-                <h3 className="text-[20px] font-bold text-plasman-dark tracking-tight">
+
+              <div>
+                <h3 className="text-[22px] font-bold text-slate-900">
                   24/7 Customer Support
                 </h3>
-                <p className="text-[#5E6472] text-[16px] leading-[28px] font-normal max-w-lg">
-                  Our dedicated support team is available 24/7 to assist you with any questions or issues anytime.
+
+                <p className="mt-2 text-gray-500 leading-8">
+                  Our support team is available around the clock to assist you
+                  with any questions or issues.
                 </p>
               </div>
             </div>
 
           </div>
-
         </div>
 
       </div>

@@ -21,7 +21,7 @@ export default function Hero() {
       [clip-path:polygon(0_0,_100%_0,_100%_88%,_50%_100%,_0_100%)] 
       md:[clip-path:polygon(0_0,_100%_0,_100%_85%,_80%_98%,_20%_98%,_0_85%)]"
     >
-      <div className="w-full md:col-span-7 lg:col-span-7 flex items-center justify-start pl-6 pr-4 py-16 md:py-0 z-10">
+      <div className="w-full md:col-span-7 lg:col-span-7 flex items-center justify-start pl-16  pr-4 py-16 md:py-0 z-10">
         <div className="max-w-2xl w-full relative">
           <motion.div 
             variants={gridVariants}
