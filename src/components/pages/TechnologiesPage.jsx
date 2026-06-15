@@ -3,7 +3,7 @@
 import { Leaf, Droplets, Zap, Sprout, HeartPulse, Layers } from "lucide-react";
 import CleanAir from '../../assets/images/Clean_air.jpg'
 import Energy from '../../assets/images/energy.jpg'
-import agriculture from '../../assets/images/agriculture.jpg'
+import agriculture from '../../assets/images/smart-agriculture.jpg'
 import factory from '../../assets/images/factory.jpg'
 import medical from '../../assets/images/hands-medical-doctor.jpg'
 import water from '../../assets/images/waste-water.jpg'

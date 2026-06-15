@@ -18,6 +18,7 @@ import ConsultancySection from "./components/sections/ConsultancySection";
 import AboutUsPage from "./components/pages/AboutUsPage";  
 import ServicesPage from "./components/pages/ServicesPage";  
 import TechnologiesPage from "./components/pages/TechnologiesPage";  
+import ContactUs from "./components/pages/ContactUs";  
 
 function App() {
   return (
@@ -56,7 +57,7 @@ function App() {
             <Route path="/aboutus" element={<AboutUsPage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/technologies" element={<TechnologiesPage />} />
-            {/* <Route path="/contact" element={<ContactPage />} /> */}
+           <Route path="/contact" element={<ContactUs />} /> 
 
           </Routes>
         </div>

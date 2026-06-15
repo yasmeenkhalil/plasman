@@ -55,9 +55,9 @@ export default function Navbar() {
                 className="hover:text-plasman-purple transition-colors flex items-center gap-1 py-2 tracking-wide cursor-pointer"
               >
                 {item}
-                <svg className="w-3 h-3 text-slate-500 font-bold transition-transform duration-200 group-hover/item:translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                {/* <svg className="w-3 h-3 text-slate-500 font-bold transition-transform duration-200 group-hover/item:translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg>
+                </svg> */}
               </Link>
             </li>
           ))}
@@ -72,11 +72,11 @@ export default function Navbar() {
             </button>
           </div>
 
-          <button aria-label="Toggle Menu" className="w-11 h-11 bg-plasman-light bg-opacity-40 hover:bg-plasman-light rounded-xl flex flex-col justify-center items-center gap-1.5 transition-colors duration-200 text-plasman-dark cursor-pointer">
+          {/* <button aria-label="Toggle Menu" className="w-11 h-11 bg-plasman-light bg-opacity-40 hover:bg-plasman-light rounded-xl flex flex-col justify-center items-center gap-1.5 transition-colors duration-200 text-plasman-dark cursor-pointer">
             <span className="w-5 h-[2px] bg-current rounded-full" />
             <span className="w-5 h-[2px] bg-current rounded-full" />
             <span className="w-5 h-[2px] bg-current rounded-full" />
-          </button>
+          </button> */}
 
         </div>
 
