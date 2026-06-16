@@ -10,6 +10,7 @@ import {
   Code2
 } from "lucide-react";
 import { ArrowRight } from "lucide-react";
+import Footer from '../layout/Footer'
 
  const services = [
   {
@@ -81,31 +82,26 @@ import { ArrowRight } from "lucide-react";
 
 export default function ServicesPage() {
    return (
+    <>
      <section className="bg-white py-[120px] md:py-[150px] select-none">
        <div className="max-w-[1320px] mx-auto px-4 sm:px-6">
          
-         {/* ==================== SECTION HEADER (الهيدر المطابق للصورة بالملي) ==================== */}
          <div className="flex flex-col items-center text-center mb-[60px] md:mb-[80px] relative">
            
-           {/* النص المائي الضخم المفرغ بالخلفية "Our Services" */}
            <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[56px] sm:text-[90px] md:text-[130px] font-black tracking-tight select-none pointer-events-none text-transparent [text-shadow:1px_0_0_#ECECEC,-1px_0_0_#ECECEC,0_1px_0_0_#ECECEC,0_-1px_0_0_#ECECEC] whitespace-nowrap opacity-70">
              Our Services
            </span>
 
-           {/* العنوان الرئيسي الظاهر فوق النص المائي */}
            <h2 className="relative z-10 text-[36px] sm:text-[44px] md:text-[54px] font-black text-[#0F1B2D] tracking-[-0.03em] leading-tight">
              Services We Provide
            </h2>
 
-           {/* الوصف النصي أسفل العنوان تماماً كما في الصورة */}
            <p className="relative z-10 mt-5 text-[14px] md:text-[16px] leading-relaxed text-[#5E6472] max-w-2xl font-medium">
              With a team of experienced professionals and a passion for innovation, we combine cutting-edge strategies
            </p>
 
          </div>
-         {/* ================================================================== */}
  
-         {/* LIST OF STICKY STACKING SERVICES */}
          <div className="relative">
            {services.map((service) => {
              const Icon = service.icon;
@@ -146,7 +142,6 @@ export default function ServicesPage() {
                    zIndex: service.id,
                  }}
                >
-                 {/* Premium Plasma Gradient Mesh (تأثير أطياف البلازما المتوهجة عند الـ Hover) */}
                  <div
                    className={`
                      absolute
@@ -253,5 +248,7 @@ export default function ServicesPage() {
          </div>
        </div>
      </section>
-   );
+     <Footer /> 
+    </>
+   ); 
 }

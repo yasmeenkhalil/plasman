@@ -4,41 +4,32 @@ const WorkProcess = () => {
   const steps = [
     {
       id: '01',
-      title: 'Client Discovery',
-      description: 'Client Discovery is the foundation of every successful project.',
+      title: 'Concept & Feasibility',
+      description: 'We evaluate initial concepts, conduct feasibility studies, and design specialized system architectures.',
       icon: (
         <svg className="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" strokeWidth={1.3} viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 2.5l1.2 2.4 2.6.4-1.9 1.8.5 2.6-2.4-1.2-2.4 1.2.5-2.6-1.9-1.8 2.6-.4L12 2.5z" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 1v0M8.5 2l.5.5M15.5 2l-.5.5" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M6 5.5l.8 1.6 1.8.3-1.3 1.2.3 1.8-1.6-.8-1.6.8.3-1.8-1.3-1.2 1.8-.3L6 5.5z" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M18 5.5l.8 1.6 1.8.3-1.3 1.2.3 1.8-1.6-.8-1.6.8.3-1.8-1.3-1.2 1.8-.3L18 5.5z" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 14.5a2 2 0 11-4 0 2 2 0 014 0z" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M2 20.5a5 5 0 017.5-4.3" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M20.5 14.5a2 2 0 11-4 0 2 2 0 014 0z" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M14.5 16.2a5 5 0 017.5 4.3" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M14.5 13a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M6.5 21a5.5 5.5 0 0111 0H6.5z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
     },
     {
       id: '02',
-      title: 'Research & Analysis',
-      description: 'Research & Analysis phase, we dive deep into understanding your market.',
+      title: 'R&D & Validation',
+      description: 'Moving to hands-on development, custom prototyping, precision measurements, and performance validation.',
       icon: (
         <svg className="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" strokeWidth={1.3} viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M7 10v2m3-4v4m3-6v6" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.83-5.83m-3.75 3.75a3.75 3.75 0 11-5.303-5.304 3.75 3.75 0 015.303 5.304zm0 0l3.75-3.75M21 7.5a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
         </svg>
       ),
     },
     {
       id: '03',
-      title: 'Strategy Development',
-      description: 'Based on insights from the research phase, we craft a tailored strategy.',
+      title: 'Deployment & Scaling',
+      description: 'Optimizing reactors and implementing scalable, practical plasma solutions built for viable commercial growth.',
       icon: (
         <svg className="w-10 h-10 text-gray-300" fill="none" stroke="currentColor" strokeWidth={1.3} viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.94M15 15h.008v.008H15V15zm0-3h.008v.008H15V12zm0-3h.008v.008H15V9zm-3 6h.008v.008H12V15zm0-3h.008v.008H12V12zm0-3h.008v.008H12V9zm-3 6h.008v.008H9V15zm0-3h.008v.008H9V12zm0-3h.008v.008H9V9z" />
         </svg>
       ),
     }
@@ -50,6 +41,9 @@ const WorkProcess = () => {
         
         <div className="lg:col-span-7 space-y-12">
           <div>
+            <span className="text-[13px] font-medium text-slate-400 tracking-[0.08em] block mb-2 uppercase text-center lg:text-left">
+              Our Development Pipeline
+            </span>
             <h2 className="text-3xl sm:text-4xl md:text-[44px] font-bold tracking-tight text-white text-center lg:text-left mb-2">
               Easy 3 Steps To Work
             </h2>
@@ -90,7 +84,7 @@ const WorkProcess = () => {
                   {/* Text Contents */}
                   <div className="space-y-3 md:pl-4">
                     <h3 className="text-xl font-bold text-white tracking-wide">{step.title}</h3>
-                    <p className="text-gray-300 text-[14px] leading-relaxed max-w-xl font-normalmx-auto md:mx-0">{step.description}</p>
+                    <p className="text-gray-300 text-[14px] leading-relaxed max-w-xl font-normal mx-auto md:mx-0">{step.description}</p>
                   </div>
 
                 </div>
@@ -105,7 +99,7 @@ const WorkProcess = () => {
           <div className="relative rounded-sm overflow-hidden shadow-xl max-w-full lg:max-w-md w-full">
             <img 
               src={teamImage} 
-              alt="Team working" 
+              alt="Plasma R&D Laboratory Team" 
               className="w-full h-auto object-cover min-h-[350px] md:min-h-[480px]"
             />
           </div>

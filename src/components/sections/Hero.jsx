@@ -1,7 +1,11 @@
 import { motion } from "framer-motion";
+// 1. استدعاء الـ useNavigate من مكتبة react-router-dom للتنقل السلس
+import { useNavigate } from "react-router-dom"; 
 import heroImg from "../../assets/images/meeting.jpg";
 
 export default function Hero() {
+  const navigate = useNavigate(); 
+
   const gridVariants = {
     animate: {
       y: [0, -10, 0],
@@ -21,8 +25,9 @@ export default function Hero() {
       [clip-path:polygon(0_0,_100%_0,_100%_88%,_50%_100%,_0_100%)] 
       md:[clip-path:polygon(0_0,_100%_0,_100%_85%,_80%_98%,_20%_98%,_0_85%)]"
     >
-      <div className="w-full md:col-span-7 lg:col-span-7 flex items-center justify-start pl-16  pr-4 py-16 md:py-0 z-10">
+      <div className="w-full md:col-span-7 lg:col-span-7 flex items-center justify-start pl-16 pr-4 py-16 md:py-0 z-10">
         <div className="max-w-2xl w-full relative">
+          
           <motion.div 
             variants={gridVariants}
             animate="animate"
@@ -45,27 +50,43 @@ export default function Hero() {
           </motion.div>
 
           <div className="relative z-10 text-left pt-9">
-            <span className="text-2xl font-medium text-slate-400 block mb-3 tracking-wide">
-              20+ Years In Business
+            <span className="text-xl sm:text-2xl font-semibold text-plasman-purple block mb-3 tracking-[0.05em] uppercase">
+              Accelerating Innovation
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.7rem] font-normal text-plasman-dark leading-[1.15] tracking-tight mb-6">
-              Empowering Your <br />
-              {/* تعديل الألوان لتقرأ من المتغيرات العامة */}
-              <span className="text-plasman-dark font-extralight italic">Success</span>
-              <span className="text-plasman-dark"> at a Time</span>
+            
+            <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold text-plasman-dark leading-[1.15] tracking-tight mb-5 uppercase">
+              Advanced Plasma <br />
+              <span className="text-plasman-purple font-extralight italic lowercase">science</span>
+              <span className="text-plasman-dark"> & Global R&D</span>
             </h1>
 
-            <div className="mt-6">
-              {/* تعديل لون الزر والـ hover ليتناسب مع الهوية */}
-              <button className="bg-plasman-dark hover:bg-plasman-deep text-white font-semibold text-sm px-6 py-3 rounded-md transition-all duration-300 shadow-sm active:scale-95">
-                View Solutions
+            <p className="text-gray-500 text-[15px] sm:text-[16px] leading-relaxed max-w-xl font-medium mb-8">
+              Moving plasma technologies from initial concept to scalable industrial applications. 
+              We proudly bridge global companies with elite research laboratories in Japan.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-4">
+              {/* زر استكشاف الخدمات يوجه لصفحة الخدمات */}
+              <button 
+                onClick={() => navigate("/services")}
+                className="bg-plasman-dark hover:bg-plasman-deep text-white font-bold text-sm px-7 py-4 rounded-xl transition-all duration-300 shadow-sm active:scale-95 cursor-pointer"
+              >
+                Explore Our Services
+              </button>
+              
+              {/* زر التواصل يوجه لصفحة التواصل */}
+              <button 
+                onClick={() => navigate("/contact")}
+                className="border border-slate-200 hover:border-plasman-purple bg-white text-plasman-dark hover:text-plasman-purple font-bold text-sm px-7 py-4 rounded-xl transition-all duration-300 shadow-sm active:scale-95 cursor-pointer"
+              >
+                Contact an Expert
               </button>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="absolute left-[45.5%] top-[47%] -translate-x-1/2 -translate-y-1/2 z-20 hidden md:block pointer-events-none">
+      <div className="absolute left-[45.5%] top-[32%] -translate-x-1/2 -translate-y-1/2 z-20 hidden md:block pointer-events-none">
         <div className="absolute inset-0 bg-slate-200/40 blur-2xl rounded-full scale-110 animate-pulse" />
         
         <motion.div
@@ -104,7 +125,7 @@ export default function Hero() {
         >
           <img
             src={heroImg}
-            alt="Business Meeting"
+            alt="Plasman Solutions Research Meeting"
             className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#f8f9fa]/40 via-[#f8f9fa]/10 to-transparent pointer-events-none hidden md:block" />

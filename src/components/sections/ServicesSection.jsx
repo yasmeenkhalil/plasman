@@ -52,13 +52,10 @@ export default function ServicesSection() {
     <section className="bg-white py-[60px] md:py-[120px]">
       <div className="max-w-[1320px] mx-auto px-4 sm:px-6">
         
-        {/* ==================== SECTION HEADER (العناوين) ==================== */}
         <div className="flex flex-col items-center text-center mb-[50px] md:mb-[70px]">
-          {/* العنوان الصغير المؤطر المكتوب بـ الجاكارتا سانس */}
           <span className="inline-block border border-[#E2E8F0] text-[#5E6472] text-[13px] md:text-[14px] font-medium tracking-[0.05em] px-[22px] py-[10px] uppercase rounded-none bg-white mb-[18px]">
             Our Latest Services
           </span>
-          {/* العنوان الرئيسي الكبير الفخم باللون الكحلي الداكن */}
           <h2 className="text-[34px] sm:text-[40px] md:text-[48px] font-bold text-[#0F1B2D] tracking-[-0.03em] leading-[1.2]">
             Service We Provide
           </h2>

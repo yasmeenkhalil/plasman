@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 
 export default function AboutHero() {
-  // إعدادات الحركة الانسيابية الهادئة للدوائر والسهم في الخلفية
   const floatingVariants = {
     animate: {
       y: [0, -12, 0],
@@ -24,14 +23,12 @@ export default function AboutHero() {
         About Us
       </h1>
 
-      {/* الدائرة العائمة الأولى جهة اليسار */}
       <motion.div 
         variants={floatingVariants}
         animate="animate"
         className="absolute left-6 top-36 w-14 h-14 rounded-full border-[3px] border-slate-200/80 pointer-events-none z-0"
       />
 
-      {/* الدائرة العائمة الثانية في المنتصف */}
       <motion.div 
         variants={floatingVariants}
         animate="animate"
@@ -39,7 +36,6 @@ export default function AboutHero() {
         className="absolute left-[45%] top-28 w-11 h-11 rounded-full border-[3px] border-slate-200/80 pointer-events-none z-0"
       />
 
-      {/* السهم المنحني الطائر جهة اليمين */}
       <motion.div 
         animate={{ 
           y: [0, -8, 0],

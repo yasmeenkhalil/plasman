@@ -33,7 +33,6 @@ export default function TargetMarketSection() {
     },
   ];
 
-  // حسبة المضلع المتناظر: يقص أعلى يسار (25% و 25%) ويقص أسفل يمين بمقدار 60 بكسل ثابتة
   const diagonalClipStyle = {
     clipPath: "polygon(15% 10px, 100% 0, 100% calc(100% - 90px), calc(100% - 90px) 100%, 0 100%, 0 35%)"
   };
@@ -41,22 +40,15 @@ export default function TargetMarketSection() {
   return (
     <section className="relative pb-10 select-none w-full z-10">
       
-      {/* الحاوية الخارجية المحددة للهوامش الجانبية المتطابقة مع بقية الموقع */}
       <div className="mx-4 md:mx-12 max-w-[1300px] xl:mx-auto relative">
         
-        {/* 
-          1. طبقة الإطار الذكي (Border Layer):
-          تأخذ المضلع المتناظر وتملأ الفراغ بلون الإطار الموحد للموقع (slate-200).
-        */}
+     
         <div 
           className="absolute inset-0 bg-slate-200/80 rounded-3xl pointer-events-none"
           style={diagonalClipStyle}
         />
 
-        {/* 
-          2. حاوية المحتوى البيضاء النقية (Content Layer):
-          تنكمش للداخل بمقدار بكسل واحد فقط عبر inset-[1px] ليرتسم الإطار حول أطراف المضلع الستة بالملي.
-        */}
+      
         <div 
           className="relative inset-[1px] bg-white rounded-3xl shadow-sm p-8 md:p-16 overflow-hidden"
           style={diagonalClipStyle}
@@ -80,13 +72,10 @@ export default function TargetMarketSection() {
                 key={index}
                 className="text-center flex flex-col items-center group cursor-pointer"
               >
-                {/* هندسة الدوائر المتطابقة بالملي مع كرت الخدمات */}
                 <div className="mx-auto mb-6 relative w-[180px] h-[180px] flex items-center justify-center">
                   
-                  {/* הדائرة المنقطة الخارجية */}
                   <div className="absolute inset-0 rounded-full border border-dashed border-slate-300 transition-transform duration-700 group-hover:rotate-45" />
 
-                  {/* الدائرة الداخلية البيضاء المرتفعة بتأثير الطفو البصري */}
                   <div className="absolute inset-[14px] rounded-full bg-[#FBFBFB] border border-slate-100/80 flex items-center justify-center transition-all duration-300 group-hover:scale-105 group-hover:shadow-[0_20px_40px_rgba(15,23,42,0.04)] group-hover:bg-white">
                     <div className="text-slate-700 transition-transform duration-300 group-hover:scale-110">
                       {item.icon}
@@ -94,7 +83,6 @@ export default function TargetMarketSection() {
                   </div>
                 </div>
 
-                {/* نصوص الكروت الموزونة والمريحة للعين */}
                 <h3 className="text-base md:text-[18px] font-black text-[#0F172A] mb-2 tracking-tight transition-colors duration-200 group-hover:text-slate-700">
                   {item.title}
                 </h3>

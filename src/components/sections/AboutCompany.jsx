@@ -10,7 +10,7 @@ export default function AboutCompany() {
   ];
 
   return (
-    <section className="w-full bg-white pt-[120px] pb-[120px] overflow-hidden select-none">
+    <section className="w-full bg-white pt-[90px] pb-[60px] overflow-hidden select-none">
       <div className="max-w-[1240px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
         
         <div className="lg:col-span-6 relative flex justify-center items-center">
@@ -47,8 +47,10 @@ export default function AboutCompany() {
           </h2>
 
           <p className="text-[15px] text-slate-400 font-normal leading-[1.7] mb-8 max-w-[540px]">
-            We are licensed and insured with over 14 years of experience in providing 
-            United States with top-rated USA business services.
+            We are a plasma technology R&D and consulting company that helps
+            organizations develop, validate, and deploy plasma-based solutions. We work
+            with industry, universities, and public institutions to move plasma technologies from
+            concept to application.
           </p>
 
           <div className="grid grid-cols-2 border border-[#edf0f2] rounded-[12px] overflow-hidden mb-10 text-[15px] font-bold text-plasman-dark bg-white">
@@ -69,11 +71,6 @@ export default function AboutCompany() {
             <div className="py-4 px-6 border-b border-[#edf0f2] bg-white hidden sm:block" />
           </div>
 
-          <div>
-            <button className="bg-plasman-dark hover:bg-plasman-deep text-white font-bold text-[14px] px-8 py-4 rounded-xl transition-all duration-300 shadow-md active:scale-[0.98] tracking-wide cursor-pointer">
-              Contact Us
-            </button>
-          </div>
 
         </div>
       </div>

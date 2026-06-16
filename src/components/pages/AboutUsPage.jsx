@@ -5,6 +5,7 @@ import { ShieldCheck, Award, Users, BookOpen, Target } from "lucide-react";
 import AboutHero from '../sections/AboutHero';
 import AboutDetails from '../sections/AboutDetails';
 import TargetMarketSection from '../sections/TargetMarketSection';
+import Footer from '../layout/Footer';
 
 export default function AboutUsPage() {
   const containerVariants = {
@@ -18,12 +19,11 @@ export default function AboutUsPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#F8F9FB] pt-35 pb-20 px-6 md:px-12 overflow-hidden">
+    <main className="min-h-screen bg-[#F8F9FB] pt-35  px-6 md:px-12 overflow-hidden">
        <AboutHero />
-      <div className="mx-auto max-w-[1300px]">
+      <div className="mx-auto max-w-[1300px] pb-10">
 
 
-        {/* 2. MISSION STATEMENT BANNER - بانر المهمة فخم وبخلفية داكنة متباينة */}
         <motion.div 
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -40,7 +40,6 @@ export default function AboutUsPage() {
             </h2>
           </div>
         </motion.div>
-        {/* 3. WHO WE ARE (2-COLUMN LAYOUT) - تفاصيل خدمات أبحاث البلازما */}
         <section className="mb-10 grid gap-12 lg:grid-cols-12 items-start">
           <div className="lg:col-span-5">
             <span className="text-xs font-bold tracking-widest text-[#C47B36] uppercase">Core Capabilities</span>
@@ -73,9 +72,7 @@ export default function AboutUsPage() {
         </section>
         <AboutDetails />
 
-        {/* 4. GOALS & TARGET MARKET (2-COLUMN GRID) - القسم المضاف الجديد */}
          <TargetMarketSection/>
-        {/* 5. MESSAGE FROM THE HEAD & BIO - رسالة الإدارة العليا والخبرات الفنية */}
         <motion.section 
           variants={containerVariants}
           initial="hidden"
@@ -83,7 +80,6 @@ export default function AboutUsPage() {
           viewport={{ once: true, margin: "-100px" }}
           className="grid gap-8 md:grid-cols-2 max-w-7xl mx-auto items-stretch"
         >
-          {/* كرت رسالة رئيس مجلس الإدارة */}
           <motion.div variants={itemVariants} className="rounded-3xl border border-slate-200 bg-white p-8 md:p-10 shadow-sm flex flex-col justify-between h-full">
             <div>
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#0F172A] mb-5">
@@ -103,7 +99,6 @@ export default function AboutUsPage() {
             </div>
           </motion.div>
 
-          {/* كرت السيرة الذاتية للدكتور أيمن بخلفية مشدودة متساوية الطول */}
           <motion.div variants={itemVariants} className="rounded-3xl border border-slate-200 bg-white p-8 md:p-10 shadow-sm flex flex-col justify-between h-full">
             <div>
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#0F172A] mb-5">
@@ -124,7 +119,8 @@ export default function AboutUsPage() {
           </motion.div>
         </motion.section>
 
-      </div> {/* END OF CONTAINER */}
+      </div> 
+      <Footer/>
     </main>
   );
 }

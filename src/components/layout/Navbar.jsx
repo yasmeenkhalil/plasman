@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-// 1. التعديل الأول: استدعاء مكتبة الـ Link في أعلى الملف لقراءة المسارات
-import { Link } from "react-router-dom"; 
+// 1. أضفنا الـ useNavigate هنا إلى جانب الـ Link من مكتبة الـ router
+import { Link, useNavigate } from "react-router-dom"; 
 import logoImg from "../../assets/images/logo1.png"; 
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  // 2. تفعيل دالة التنقل البرمجي داخل المكون
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,7 +26,7 @@ export default function Navbar() {
     >
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 flex justify-between items-center">
         
-        {/* LOGO AREA - تحويل شعار الشركة ليقرأ مسار الصفحة الرئيسية كلين بدون ريفريش */}
+        {/* LOGO AREA */}
         <Link to="/" className="flex flex-col items-center justify-center group select-none shrink-0">
           <img 
             src={logoImg} 
@@ -45,38 +47,64 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* NAVIGATION LINKS - 2. التعديل الثاني: استبدال وسم <a> بمكون <Link> لتوجه تلقائياً لـ /about */}
+        {/* NAVIGATION LINKS */}
         <ul className="hidden lg:flex items-center space-x-8 font-bold text-[15px] text-plasman-dark">
           {navItems.map((item) => (
             <li key={item} className="relative group/item">
               <Link 
-                // السطر البرمجي الذكي لتحويل كلمة About Us إلى مسار حقيقي /about متوافق مع كود الأب
                 to={item === "Home" ? "/" : `/${item.toLowerCase().replace(/\s+/g, '')}`} 
                 className="hover:text-plasman-purple transition-colors flex items-center gap-1 py-2 tracking-wide cursor-pointer"
               >
                 {item}
-                {/* <svg className="w-3 h-3 text-slate-500 font-bold transition-transform duration-200 group-hover/item:translate-y-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg> */}
               </Link>
             </li>
           ))}
         </ul>
 
         {/* BUTTONS AREA */}
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-6">
           
+          {/* CALL US SECTION */}
+          <div className="hidden sm:flex items-center gap-3">
+            <div className="w-12 h-12 bg-slate-50 rounded-xl flex items-center justify-center text-plasman-dark border border-slate-100">
+              <svg 
+                className="w-5 h-5" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor" 
+                strokeWidth={2}
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" 
+                />
+              </svg>
+            </div>
+            
+            <div className="flex flex-col">
+              <span className="text-[12px] text-slate-400 font-medium leading-tight">
+                Call us anytime
+              </span>
+              <a 
+                href="tel:08059391979" 
+                className="text-[15px] font-bold text-plasman-dark hover:text-plasman-purple transition-colors tracking-wide"
+              >
+                080-5939-1979
+              </a>
+            </div>
+          </div>
+          
+          {/* BOOK A MEETING BUTTON */}
           <div className="hidden md:block">
-            <button className="bg-plasman-dark hover:bg-plasman-deep text-white font-bold text-[14px] px-6 py-3.5 rounded-xl transition-all duration-200 active:scale-[0.98] tracking-wide cursor-pointer">
+            {/* 3. ربط الحدث onClick لإرسال المستخدم لمسار /contact */}
+            <button 
+              onClick={() => navigate("/contact")}
+              className="bg-plasman-dark hover:bg-plasman-deep text-white font-bold text-[14px] px-6 py-3.5 rounded-xl transition-all duration-200 active:scale-[0.98] tracking-wide cursor-pointer"
+            >
               Book a Meeting
             </button>
           </div>
-
-          {/* <button aria-label="Toggle Menu" className="w-11 h-11 bg-plasman-light bg-opacity-40 hover:bg-plasman-light rounded-xl flex flex-col justify-center items-center gap-1.5 transition-colors duration-200 text-plasman-dark cursor-pointer">
-            <span className="w-5 h-[2px] bg-current rounded-full" />
-            <span className="w-5 h-[2px] bg-current rounded-full" />
-            <span className="w-5 h-[2px] bg-current rounded-full" />
-          </button> */}
 
         </div>
 
